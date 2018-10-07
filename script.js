@@ -1,19 +1,21 @@
-var bodyWrapp = document.getElementsByTagName('body')[0];
-var headWrapp = document.getElementsByTagName('head')[0];
-
-var pirate = document.createElement('img');
-var btn = document.createElement ('button');
-var pirateText = document.createElement('p');
+var bodyWrapp = document.getElementsByTagName('body')[0]
+var headWrapp = document.getElementsByTagName('head')[0]
 
 
-var fontStyle = document.createElement ('link');
+var pirate = document.createElement('img')
+var btn = document.createElement ('button')
+var pirateText = document.createElement('p')
 
-var bottleCounter = 5;
-var gameCounter = 0;
 
-fontStyle.setAttribute('rel','stylesheet');
-fontStyle.setAttribute('href','https://fonts.googleapis.com/css?family=Old+Standard+TT:400i');
-headWrapp.appendChild(fontStyle);
+var fontStyle = document.createElement ('link')
+
+
+var gameCounter = 0
+
+
+fontStyle.setAttribute('rel','stylesheet')
+fontStyle.setAttribute('href','https://fonts.googleapis.com/css?family=Old+Standard+TT:400i')
+headWrapp.appendChild(fontStyle)
 
 
 bodyWrapp.style =
@@ -29,7 +31,7 @@ bodyWrapp.style =
 `
 
 
-btn.innerText = "Star play"
+btn.innerText = "Старт"
 btn.style =
 `
       width: 200px;
@@ -41,12 +43,12 @@ btn.style =
       outline: 0;
 `
 
-pirate.setAttribute('src','https://cdn.pixabay.com/photo/2017/03/07/06/47/pirate-2123313_960_720.png');
+pirate.setAttribute('src','https://cdn.pixabay.com/photo/2017/03/07/06/47/pirate-2123313_960_720.png')
 pirate.style = ` width: 400px;`
 
 
 
-pirateText.innerText = 'Start to play';
+pirateText.innerText = 'Нажми Старт';
 pirateText.style =
  `
       display: flex;
@@ -64,32 +66,60 @@ pirateText.style =
 `
 
 
-function createBodyElements() {
-    	var pirateWrap = document.createElement('div');
-    	var pirateDiv = document.createElement('div');
-    	var bottleDiv = document.createElement('div');
+var pirateWrap = document.createElement('div')
+var pirateDiv = document.createElement('div')
+var bottleDiv = document.createElement('div')
 
-      for(var i = 0; i < bottleCounter; i++) {
-          var bottle = document.createElement('img');
-        	bottle.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png');
-        	bottle.style = `width: 100px;
-        	cursor: pointer;`
-        	bottleDiv.appendChild(bottle);
-      }
-      pirateDiv.appendChild(pirate);
+           bottle1 = document.createElement('img')
+        	 bottle1.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png')
+        	 bottle1.style = `width: 100px;
+        	 cursor: pointer;`
+        	 bottleDiv.appendChild(bottle1)
+           bottle1Number = 1
 
-      pirateWrap.style = `display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;`;
-      pirateWrap.appendChild(pirateDiv);
-      pirateWrap.appendChild(bottleDiv);
+           bottle2 = document.createElement('img')
+           bottle2.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png')
+           bottle2.style = `width: 100px;
+           cursor: pointer;`
+           bottleDiv.appendChild(bottle2)
+           bottle2Number = 2
 
-      document.body.appendChild(pirateWrap);
-      document.body.appendChild(btn);
-      document.body.appendChild(pirateText);
-}
-createBodyElements();
+           bottle3 = document.createElement('img')
+           bottle3.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png')
+           bottle3.style = `width: 100px;
+           cursor: pointer;`
+           bottleDiv.appendChild(bottle3)
+           bottle3Number = 3
+
+           bottle4 = document.createElement('img')
+           bottle4.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png')
+           bottle4.style = `width: 100px;
+           cursor: pointer;`
+           bottleDiv.appendChild(bottle4)
+           bottle4Number = 4
+
+           bottle5 = document.createElement('img')
+           bottle5.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png')
+           bottle5.style = `width: 100px;
+           cursor: pointer;`
+           bottleDiv.appendChild(bottle5)
+           bottle5Number = 5
+
+
+pirateDiv.appendChild(pirate)
+
+pirateWrap.style = `display: flex;
+justify-content: space-around;
+align-items: center;
+width: 100%;`;
+pirateWrap.appendChild(pirateDiv)
+pirateWrap.appendChild(bottleDiv)
+
+
+document.body.appendChild(pirateWrap)
+document.body.appendChild(btn)
+document.body.appendChild(pirateText)
+
 
 
 
@@ -107,24 +137,53 @@ let fraseArray = ["О-о-о! Добро пожаловать! Давно у на
 ]
 
 
+var rand = 1 + Math.random() * (5 + 1 - 1)
+rand = Math.floor(rand)
+
+
+
+
 btn.onclick = function(){
-
-	pirateText.innerText = fraseArray[gameCounter];
+	pirateText.innerText = fraseArray[gameCounter]
 	gameCounter++;
-	if(gameCounter >= fraseArray.length) {
-    function getRandom(){
-			var rand = 1 + Math.random() * (5 + 1 - 1)
-    	rand = Math.floor(rand)
-    	return (rand)
-		}
-    createBodyElements.bottleDiv.onclick = function(){
-      if ()
-        pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своиг салаг в кабак и отдыхайте"
-      else
-        pirateText.innerText = "Я говорил, что вы еще зеленые, а ну пошли вон! Что бы ноги вашей не было через 10 секунд!"
-      
+  if(gameCounter >= fraseArray.length)
+     pirateText.innerText = "Да бутылку выбирай, что ты на кнопку жмешь"
+}
+
+
+bottle1.onclick = function(){
+    if (rand === bottle1Number)
+      pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своих салаг в кабак и отдыхайте"
+    else
+      pirateText.innerText = "Не-а, ищи дальше"
+}
+
+bottle2.onclick = function(){
+    if (rand === bottle2Number)
+      pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своих салаг в кабак и отдыхайте"
+    else
+      pirateText.innerText = "Почти угадал, но это ведь не считается"
+}
+
+bottle3.onclick = function(){
+    if (rand === bottle3Number)
+      pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своих салаг в кабак и отдыхайте"
+    else
+      pirateText.innerText = "Давай дальше, здесь пусто"
+}
+
+bottle4.onclick = function(){
+    if (rand === bottle4Number)
+      pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своих салаг в кабак и отдыхайте"
+    else
+      pirateText.innerText = "Эта пустая"
+}
+
+bottle5.onclick = function(){
+    if (rand === bottle5Number)
+      pirateText.innerText = "Отлично, я знал, что у тебя получится! Давай, заводи своих салаг в кабак и отдыхайте"
+    else{
+
+      pirateText.innerText = "Да что за невезение такое, давай дальше"
     }
-
-	}
-
 }
