@@ -1,24 +1,23 @@
 
-// Вытягиваем в ДЖ наш блок body, это нобязательно но для большей читаемости кода и правильности делам так
 var bodyWrapp = document.getElementsByTagName('body')[0];
 var headWrapp = document.getElementsByTagName('head')[0];
-// Создаем наши блоки
+
 var pirate = document.createElement('img');
 var btn = document.createElement ('button');
 var pirateText = document.createElement('p');
 
-// Создаем "подключение шрифтов"
+
 var fontStyle = document.createElement ('link');
-// Счетчик количества бутылок
+
 var bottleCounter = 5;
 var gameCounter = 0;
-// Подключаем шрифты
-// Атрибуты лучше задавать через setAttribute(опять же читаемость кода и правильность)
+
+
 fontStyle.setAttribute('rel','stylesheet');
 fontStyle.setAttribute('href','https://fonts.googleapis.com/css?family=Old+Standard+TT:400i');
 headWrapp.appendChild(fontStyle);
 
-// Стилизация элементов
+
 bodyWrapp.style =
 `
       display: flex;
@@ -66,14 +65,13 @@ pirateText.style =
       font-weight: 600;
 `
 
-// Добавляем наши элементы непосредственно в body + обарачиваем их в дополнительные обертки для лучшей стилизации
 
 function createBodyElements() {
     	var pirateWrap = document.createElement('div');
     	var pirateDiv = document.createElement('div');
     	var bottleDiv = document.createElement('div');
 
-    // На самом деле не самое лучше решение , но наглядно и работает. Создаем в цикле 5 бутылок и раскидываем в соответствующий блок
+
       for(var i = 0; i < bottleCounter; i++) {
           var bottle = document.createElement('img');
         	bottle.setAttribute('src','http://xn--d1acksbebi.xn--p1ai/images/pirates/gift_bottle_300.png');
@@ -94,13 +92,13 @@ function createBodyElements() {
       document.body.appendChild(btn);
       document.body.appendChild(pirateText);
 }
-// Вызываем функцию
+
 createBodyElements();
 
 
 
 
-// В массив можно просто все фразы по порядку запихать
+
 let fraseArray = ["О-о-о! Добро пожаловать! Давно у нас в гостях не было пиратов Интернет морей, фрегат мне в бухту! Смотрю вы еще зеленые совсем. ",
 "К себе в кабак мы пускаем только настоящих морсикх волков. А у вас еще молоко на губах не обсохло, что бы зваться пиратами.",
 "С какого вы судна? С Дохлой Каракатицы?... Так это вы под Лютой Ириной ходили?!",
@@ -118,7 +116,6 @@ btn.onclick = function(){
 
 	pirateText.innerText = fraseArray[gameCounter];
 	gameCounter++;
-	// Не сильно понял как должны работать фразы, поэтому при достижении последней , разговоро начинается  с первой.
 	if(gameCounter >= fraseArray.length) {
     function getRandom(){
 			var rand = 1 + Math.random() * (5 + 1 - 1)
@@ -133,7 +130,7 @@ btn.onclick = function(){
       }
     }
 
-		// Вот тут уже вызываешь свою функцию , которая и запустить игру
+
 	}
 
 }
