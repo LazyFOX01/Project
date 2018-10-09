@@ -46,7 +46,7 @@ cursor: pointer;
 outline: 0;
 `
 
-pirate.setAttribute('src','https://cdn.pixabay.com/photo/2017/03/07/06/47/pirate-2123313_960_720.png')
+pirate.setAttribute('src','http://pngimg.com/uploads/pirate/pirate_PNG91.png')
 pirate.style = ` width: 400px;`
 
 
