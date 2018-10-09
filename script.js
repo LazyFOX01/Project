@@ -46,7 +46,7 @@ cursor: pointer;
 outline: 0;
 `
 
-pirate.setAttribute('src','https://github.com/LazyFOX01/Project/blob/master/pirate_PNG91.png')
+pirate.setAttribute('src','https://raw.githubusercontent.com/LazyFOX01/Project/master/pirate_PNG91.png')
 pirate.style = ` width: 400px;`
 
 
